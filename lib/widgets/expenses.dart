@@ -22,7 +22,7 @@ class _ExpensesState extends State<Expenses> {
       title: 'Cinema',
       amount: 15.69,
       date: DateTime.now(),
-      category: Category.leisure,
+      category: Category.food,
     ),
     Expense(
       title: 'Theater',
@@ -32,11 +32,26 @@ class _ExpensesState extends State<Expenses> {
     ),
   ];
 
+  void _openAllExpenseOverlay() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => const Text('Modal botton Sheet'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      const Text('The chart...'),
-      Expanded(child: ExpensesList(expenses: _registeredExpenses)),
-    ]);
+    return Scaffold(
+      appBar: AppBar(title: const Text('Flutter ExpenseTracker'), actions: [
+        IconButton(
+          onPressed: _openAllExpenseOverlay,
+          icon: const Icon(Icons.add),
+        )
+      ]),
+      body: Column(children: [
+        const Text('The chart...'),
+        Expanded(child: ExpensesList(expenses: _registeredExpenses)),
+      ]),
+    );
   }
 }
