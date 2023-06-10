@@ -14,6 +14,7 @@ class _NewExpenseState extends State<NewExpense> {
   final _titleControler = TextEditingController();
   final _amountControler = TextEditingController();
   DateTime? _selectedDate;
+  Category _selectedCategory = Category.leisure;
 
   void _presentDatePiker() async {
     final now = DateTime.now();
@@ -29,6 +30,16 @@ class _NewExpenseState extends State<NewExpense> {
     setState(() {
       _selectedDate = pickedDate;
     });
+  }
+
+  void _submitExpenseDate() {
+    final enteredAmount = double.tryParse(_amountControler.text);
+    final amountIsInvalid = enteredAmount == null || enteredAmount <= 0;
+    if (_titleControler.text.trim().isEmpty ||
+        amountIsInvalid ||
+        _selectedDate == null) {
+      // show error message
+    }
   }
 
   @override
@@ -80,17 +91,32 @@ class _NewExpenseState extends State<NewExpense> {
               )),
             ],
           ),
+          const SizedBox(
+            height: 16,
+          ),
           Row(children: [
+            DropdownButton(
+                value: _selectedCategory,
+                items: Category.values
+                    .map((category) => DropdownMenuItem(
+                          value: category,
+                          child: Text(category.name),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  if (value == null) return;
+                  setState(() {
+                    _selectedCategory = value;
+                  });
+                }),
+            const Spacer(),
             TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
                 child: const Text('Cancel')),
             OutlinedButton(
-                onPressed: () {
-                  print(_titleControler.text);
-                  print(_amountControler.text);
-                },
+                onPressed: _submitExpenseDate,
                 child: const Text('Save Expense!')),
           ]),
         ],
