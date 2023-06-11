@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:expense_tracker/models/expense.dart';
 
 class NewExpense extends StatefulWidget {
-  const NewExpense(
-      {required this.addNewExpense, required this.listOfExpenses, super.key});
+  const NewExpense({
+    required this.addNewExpense,
+    required this.listOfExpenses,
+    super.key,
+  });
 
   final List<Expense> listOfExpenses;
   final void Function(Expense expense) addNewExpense;
