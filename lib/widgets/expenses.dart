@@ -58,6 +58,14 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    Widget mainContent = const Center(
+      child: Text('No expenses found. Start adding some!'),
+    );
+
+    if (_registeredExpenses.isNotEmpty) {
+      mainContent = ExpensesList(expenses: _registeredExpenses);
+    }
+
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter ExpenseTracker'), actions: [
         IconButton(
@@ -67,11 +75,15 @@ class _ExpensesState extends State<Expenses> {
       ]),
       body: Column(children: [
         const Text('The chart...'),
+<<<<<<< Updated upstream
         Expanded(
             child: ExpensesList(
           expenses: _registeredExpenses,
           onRenmoveExpense: deleteExpense,
         )),
+=======
+        Expanded(child: mainContent),
+>>>>>>> Stashed changes
       ]),
     );
   }
