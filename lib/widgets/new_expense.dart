@@ -146,9 +146,12 @@ class _NewExpenseState extends State<NewExpense> {
                   Navigator.pop(context);
                 },
                 child: const Text('Cancel')),
-            OutlinedButton(
-                onPressed: _submitExpenseDate,
-                child: const Text('Save Expense!')),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: ElevatedButton(
+                  onPressed: _submitExpenseDate,
+                  child: const Text('Save Expense!')),
+            ),
           ]),
         ],
       ),
