@@ -48,7 +48,7 @@ class ExpenseBucket {
   final Category category;
   final List<Expense> expenses;
 
-  double get totalExenses {
+  double get totalExpenses {
     double sum = 0;
 
     for (final expense in expenses) {
