@@ -1,16 +1,11 @@
-# expense_tracker
+# expense_tracker APP
 
-A new Flutter project.
+Made using flutter.
 
-## Getting Started
+## Portrait mode
+<img src="Screenshot_1686937095.png">
+<img src="Screenshot_1686937144.png">
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Landscape mode
+<img src="Screenshot_1686937138.png">
+<img src="Screenshot_1686937113.png">
