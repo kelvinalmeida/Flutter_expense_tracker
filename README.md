@@ -3,8 +3,8 @@
 Made using flutter.
 
 ## Portrait mode
-![LIGHT MODE](Screenshot_1686937095.png)
-![DARK MODE](Screenshot_1686937144.png)
+![LIGHT MODE](Screenshot_1686937095.png | width=100)
+![DARK MODE](Screenshot_1686937144.png | width=100)
 <!-- <img src="Screenshot_1686937095.png" width="100">
 <img src="Screenshot_1686937144.png" width="100"> -->
 
